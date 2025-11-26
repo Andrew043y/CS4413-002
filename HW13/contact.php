@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Welcome to Andrew's homepage.</title>
+	<!-- Favicon  -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="assets/css/core-style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Responsive CSS -->
+    <link href="assets/css/responsive.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper" style="background-image: url(assets/images/UTSABackground.jpg)">
+
+        <!-- ****** Header Area Start ****** -->
+        <header class="header_area">
+            <!-- Top Header Area Start -->
+            <div class="top_header_area">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center justify-content-end">
+
+                        <div class="col-12 col-lg-7">
+                            <div class="top_single_area d-flex align-items-center">
+                                <!-- Logo Area -->
+                                <div class="top_logo">
+                                    <a href="#"><img src="assets/images/UTSA_img.jpg" alt="UTSA Image" width="300" height="150" title="UTSA Image"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Header Area End -->
+            <div class="main_header_area">
+                <div class="container h-100">
+                    <div class="row h-100">
+                        <div class="col-12 d-md-flex justify-content-between">
+                            <!-- Menu Area -->
+                            <div class="main-menu-area">
+                                <nav class="navbar navbar-expand-lg">
+
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#karl-navbar" aria-controls="karl-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i class="ti-menu"></i></span></button>
+
+                                    <div class="collapse navbar-collapse align-items-center collapse" id="karl-navbar">
+                                        <ul class="navbar-nav animated" id="nav">
+                                            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                                            <li class="nav-item active"><a class="nav-link" href="work.html">Work</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="school.html">School</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="interests.html">Interests</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ****** Header Area End ****** -->
+
+		<div class="container h-100">
+                <div class="row h-100 align-items-end">
+                    <div class="col-100 col-md-20 col-lg-12">
+                        <div class="offer-content-area wow fadeInUp" data-wow-delay="1s">
+							<?php
+								if(isset($_GET['msg']) && $_GET['msg']=="Error")
+									echo '<div class="alert alert-danger">You must fill out the contact form first!</div>';
+							?>
+                            <h3>Please Fill out the Contact Form:</h3>
+							<form method="get" action="results.php">
+							<div class="form-group" id="fnGroup">
+								<label class="control-label"> First Name</label>
+								<input type="text" id = "firstname" name="firstName" class = "form-control">
+								<span class="help-block" id="fnFeedback"></span>
+							</div>
+							<div class="form-group" id="lnGroup">
+								<label class="control-label"> Last Name</label>
+								<input type="text" id = "lastname" name="lastName" class = "form-control">
+								<span class="help-block" id="lnFeedback"></span>
+							</div>
+							<div class="form-group" id="emailGroup">
+								<label class="control-label"> Email</label>
+								<input type="text" id = "email" name="email" class = "form-control">
+								<span class="help-block" id="emailFeedback"></span>
+							</div>
+							<div class="form-group" id="phoneGroup">
+								<label class="control-label"> Phone Number</label>
+								<input type="text" id = "phone" name="phone" class = "form-control">
+								<span class="help-block" id="phoneFeedback"></span>
+							</div>
+							<div class="form-group" id="userGroup">
+								<label class="control-label"> User Name</label>
+								<input type="text" id = "username" name="userName" class = "form-control">
+								<span class="help-block" id="userFeedback"></span>
+							</div>
+							<div class="form-group" id="pwGroup">
+								<label class="control-label"> Password</label>
+								<input type="text" id = "password" name="password" class = "form-control">
+								<span class="help-block" id="pwFeedback"></span>
+							</div>
+							<div class="form-group" id="commentGroup">
+								<label class="control-label"> Comment</label>
+								<input type="text" id = "comment" name="comment" class = "form-control">
+								<span class="help-block" id="commentFeedback"></span>
+							</div>
+							<hr>
+							<div class="form-group">
+								<button type="submit" class="btn btn-success" name="submit" value="submit">Submit</button>
+							</div>
+							</form>
+							
+                            <a href="contact.html" class="btn karl-btn mt-30" target="_top">Back to Top</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <!-- /.wrapper end -->
+</body>
+
+</html>
+<!--script src = "assets/js/validate.js"></script>-->
