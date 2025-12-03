@@ -246,7 +246,7 @@ include("functions.php");
 								$_SESSION['userData']=$userName;
 								$password=$_POST['password'];
 								$_SESSION['pwData']=$password;
-								$comment=$_POST['comment'];
+								$comment=addslashes($_POST['comment']);
 								$_SESSION['commentData']=$comment;
 								
 								$nameRegex="/^[a-zA-Z-']+$/";
@@ -322,6 +322,11 @@ include("functions.php");
 								if($errors!=''){
 									redirect("index.php?page=contact&error=$errors");
 								}
+								$dblink= new mysqli("localhost", "web_user", "1PNra698H0nffDq4", "contact_data");
+								$sql="Insert into `contact_info` (`first_name`, `last_name`, `email`, `phone`, `user_name`, `password`, `comments`) values ('$firstName', '$lastName', '$email', '$phone', '$userName', '$password', '$comment')";
+								$dblink->query($sql) or
+									die("<h2>Something went wrong with:<br>$sql<br>".$dblink->error."</h2>");
+								echo '<h2>Data successfully entered into the database!</h2>';
 								
 ////									header("Location: results.php");
 									echo '<h3>Contact Form Data:</h3>';
